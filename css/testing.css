@@ -1,0 +1,6 @@
+header {
+    display: grid;
+}
+h1 {background: lightgreen;
+color: greenyellow;
+text-align: center;}
