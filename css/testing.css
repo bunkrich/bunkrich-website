@@ -1,6 +1,18 @@
 header {
     display: grid;
 }
-h1 {background: lightgreen;
-color: greenyellow;
-text-align: center;}
+h1 {
+    background: lightgreen;
+    color: greenyellow;
+    text-align: center;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        color: white;
+    }
+    h1 {
+     background: salmon;
+     color: white;
+    }
+}
