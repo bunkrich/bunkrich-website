@@ -23,52 +23,55 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <header><h1>Tip Calculator</h1></header>
-<div class="calc-form">
-  <label for="barNet">Net Amount to/from the Bar</label>
-  <input type="number" name="barNet" id="barNet"></br>
-</div>
-<div class="calc-form">
-  <label for="serverCash">Cash on Hand</label>
-  <input type="number" name="serverCash" id="serverCash"></br>
-</div>
-<div class="hide calc-form">
-
-
-  <input type="number" name="totalTips" id="totalTips"></br>
-</div>
-<!-- <p id="totalTips">TT</p> -->
-
-<div class="calc-form">
-
-<input type="checkbox" id="busserOTR" name="busserOTR"> Busser will get a check for tips.<br>
-</div>
-<div class="calc-form">
-
-  <button type="button" onclick="tipMath()">Submit</button>
-</div>
-<p id="tip-out"></p>
-<p id="tip-out-2"></p>
-<p id="tip-out-3"></p>
-  <div id="tip-out-box">
-  <h3>Cash Tips to Bar:</h3>
-  <p id="cash-out-bar"></p>
-  <h3>Cash Tips to Busser:</h3>
-  <p id="cash-out-busser"></p>
-  <h3>Cash Tips to You:</h3>
-  <p id="cash-out-server"></p>
+  <header>
+    <h1>Tip Calculator</h1>
+  </header>
+  <div class="calc-form">
+    <label for="barNet">Net Amount to/from the Bar</label>
+    <input type="number" name="barNet" id="barNet"></br>
   </div>
-  
+  <div class="calc-form">
+    <label for="serverCash">Cash on Hand</label>
+    <input type="number" name="serverCash" id="serverCash"></br>
+  </div>
+  <div class="hide calc-form">
+    <input type="number" name="totalTips" id="totalTips"></br>
+  </div>
+
+  <div class="calc-form">
+    <input type="checkbox" id="busserOTR" name="busserOTR"> Busser will get a check for tips.<br>
+  </div>
+
+  <div class="calc-form">
+    <button type="button" onclick="tipMath()">Run The Numbers!</button>
+  </div>
+
+  <div id="tip-out-message"></div>
+
+  <div id="tip-out-box">
+    <div class="tip-breakout" id="cash-out-bar"></div>
+    <div class="tip-breakout" id="cash-out-busser"></div>
+    <div class="tip-breakout" id="cash-out-server"></div>
+  </div>
+
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+  </script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>

@@ -20,49 +20,47 @@ let text = "";
 let text2 = "";
 let text3 = "";
 
+
+function tipMessage(name, total, cash, cc) {
+  return `
+    <h3>${name} Tip Breakdown</h3>
+    <div class="tip-table">
+    <div class="total-tips"><span class="tip-key">Total Tips: </span><span class="tip-amount">$${total}</span></div>
+    <div class="cash-tips"><span class="tip-key">Cash: </span><span class="tip-amount">$${cash}</span></div>
+    <div class="cc-tips"><span class="tip-key">Paycheck: </span><span class="tip-amount">$${cc}</span></div>
+    </div>
+  `;
+}
+
+
 function tipMath() {
-  let totalTipsInput = document.getElementById("totalTips");
   let barNet = Number(document.getElementById("barNet").value);
   let serverCash = Number(document.getElementById("serverCash").value);
-  // let totalTips = 0;
+  let busserOTR = document.getElementById("busserOTR").checked;
 
-  // if (isNaN(barNet) || barNet < 0) {
   if (barNet < 0) {
     barNet = barNet * -1;
     ccTips = barNet
     totalTips = barNet + serverCash;
     cashTips = serverCash;
-    text = "You get $" + barNet + " from the bar. This is what you input into the spreadsheet.";
-    // text2 = "Your total tips are $" + totalTips + ".";
-    // text3 = "Your total cash tips to tip out on are: $" + cashTips;
-
+    serverMessage = `You would get $${barNet} from the bar but now this is what you input into the spreadsheet for paychecks.`;
   } else {
     ccTips = 0;
     totalTips = (barNet - serverCash) * -1;
     cashTips = serverCash - barNet;
-    text = "You owe the bar $" + barNet + ".";
-    // text2 = "Your total tips are $" + totalTips + "."
-    // text3 = "Your total cash tips to tip out on are $" + cashTips;
+    serverMessage = `<strong>You owe the bar $${barNet}.</strong>`;
 
   }
-  console.log("Total Credit Card Tips: " + ccTips);
-  text2 = "Your total tips are $" + totalTips + "."
-  text3 = "Your total cash tips to tip out on are $" + cashTips;
 
-  totalTipsInput.setAttribute("value", totalTips);
-
-  let busserOTR = document.getElementById("busserOTR").checked;
   if (busserOTR === true) {
-    // console.log("true! Busser will get a check")
     busserTipOutCash = Math.ceil(cashTips * busserPercent);
     busserTipOutCC = Math.ceil(ccTips * busserPercent);
-
   } else {
-    // console.log("false! You gotta tip the busser out!")
     busserTipOutCash = Math.ceil(totalTips * busserPercent);
     busserTipOutCC = 0;
   }
 
+  serverMessage += `<p>Your total tips are $${totalTips}, and your total cash tips to tip out on are $${cashTips}</p>`
 
 
   barTipOutCash = Math.ceil(cashTips * barPercent);
@@ -71,20 +69,20 @@ function tipMath() {
 
   serverTipsCC = ccTips - busserTipOutCC - barTipOutCC;
 
-barTotalTips = barTipOutCash + barTipOutCC;
-busserTotalTips = busserTipOutCash + busserTipOutCC;
-serverTotalTips = serverTakeHomeCash + serverTipsCC;
+  barTotalTips = barTipOutCash + barTipOutCC;
+  busserTotalTips = busserTipOutCash + busserTipOutCC;
+  serverTotalTips = serverTakeHomeCash + serverTipsCC;
 
-  tipTextBusser = "Total Tips: $" + busserTotalTips +" Cash: $" + busserTipOutCash + " Check: $" + busserTipOutCC;
 
-  tipTextBar = "Total Tips: $" + barTotalTips +" Cash: $" + barTipOutCash + " Check: $"+ barTipOutCC;
 
-  tipTextServer = "Total Tips: $" + serverTotalTips +" Cash: $" + serverTakeHomeCash + " Check: $"+ serverTipsCC;
+  tipTextBusser = tipMessage("Busser", busserTotalTips, busserTipOutCash, busserTipOutCC);
+  tipTextBar = tipMessage("Bar", barTotalTips, barTipOutCash, barTipOutCC);
+  tipTextServer = tipMessage("Server", serverTotalTips, serverTakeHomeCash, serverTipsCC);
+
 
   document.getElementById("tip-out-box").style.display = "block";
-  document.getElementById("tip-out").innerHTML = text
-  document.getElementById("tip-out-2").innerHTML = text2;
-  document.getElementById("tip-out-3").innerHTML = text3;
+  document.getElementById("tip-out-message").innerHTML = serverMessage
+
   document.getElementById("cash-out-bar").innerHTML = tipTextBar;
   document.getElementById("cash-out-busser").innerHTML = tipTextBusser;
   document.getElementById("cash-out-server").innerHTML = tipTextServer;
