@@ -10,7 +10,6 @@
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -24,9 +23,41 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <header><h1>Please Hold</h1></header>
+  <header><h1>Tip Calculator</h1></header>
+<div class="calc-form">
+  <label for="barNet">Net Amount to/from the Bar</label>
+  <input type="number" name="barNet" id="barNet"></br>
+</div>
+<div class="calc-form">
+  <label for="serverCash">Cash on Hand</label>
+  <input type="number" name="serverCash" id="serverCash"></br>
+</div>
+<div class="hide calc-form">
 
 
+  <input type="number" name="totalTips" id="totalTips"></br>
+</div>
+<!-- <p id="totalTips">TT</p> -->
+
+<div class="calc-form">
+
+<input type="checkbox" id="busserOTR" name="busserOTR"> Busser will get a check for tips.<br>
+</div>
+<div class="calc-form">
+
+  <button type="button" onclick="tipMath()">Submit</button>
+</div>
+<p id="tip-out"></p>
+<p id="tip-out-2"></p>
+<p id="tip-out-3"></p>
+  <div id="tip-out-box">
+  <h3>Cash Tips to Bar:</h3>
+  <p id="cash-out-bar"></p>
+  <h3>Cash Tips to Busser:</h3>
+  <p id="cash-out-busser"></p>
+  <h3>Cash Tips to You:</h3>
+  <p id="cash-out-server"></p>
+  </div>
   
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

@@ -2,8 +2,8 @@ header {
     display: grid;
 }
 h1 {
-    background: lightgreen;
-    color: greenyellow;
+    background: salmon;
+    color: white;
     text-align: center;
 }
 @media (prefers-color-scheme: dark) {
@@ -12,7 +12,39 @@ h1 {
         color: white;
     }
     h1 {
-     background: salmon;
-     color: white;
+
+     background: lightgreen;
+     color: greenyellow;
+     text-align: center;
     }
+}
+
+.calc-form {
+    padding: .5em 0;
+    /* display: flex;
+    background: pink;
+    flex-direction: row; */
+}
+.calc-form label{
+
+}
+.calc-form input[type=number] {
+    width: 99%;
+    margin: auto;
+}
+body {
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    background: white;
+    padding: 1em;
+}
+.hide {
+    display: none;
+}
+html {
+    background: gray;
+}
+#tip-out-box {
+    display: none;
 }
