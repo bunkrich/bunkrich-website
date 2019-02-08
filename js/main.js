@@ -10,15 +10,15 @@ let barTipOutCheck = 0;
 let busserPercent = .15;
 let busserOTR = false;
 let busserTipOutCash = 0;
-let busserTipOutCheck = 0;
+// let busserTipOutCheck = 0;
 
-let takeHomeTipsCash = 0;
-let takeHomeTipsCheck = 0;
+// let takeHomeTipsCash = 0;
+// let takeHomeTipsCheck = 0;
 
 let tipTextBusser = "";
-let text = "";
-let text2 = "";
-let text3 = "";
+// let text = "";
+// let text2 = "";
+// let text3 = "";
 
 
 function tipMessage(name, total, cash, cc) {
