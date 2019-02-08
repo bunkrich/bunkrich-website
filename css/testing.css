@@ -4,7 +4,7 @@ header {
 
 h1 {
     background: salmon;
-    color: white;
+    color: navy;
     text-align: center;
 }
 
@@ -100,7 +100,7 @@ label {
 }
 
 h3 {
-    color: salmon;
+    color: navy;
 }
 
 #calc-output {
