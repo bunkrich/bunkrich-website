@@ -38,11 +38,10 @@ h1 {
 }
 
 body {
-    max-width: 800px;
-    margin: auto;
+
     font-family: 'Open Sans', sans-serif;
     background: white;
-    padding: 5vw;
+
 }
 
 .hide {
@@ -98,4 +97,25 @@ label {
     /* padding: 1em; */
     display: block;
     margin: 1em auto;
+}
+
+h3 {
+    color: salmon;
+}
+
+#calc-output {
+    display: grid;
+    min-height: 100vh;
+    align-content: center;
+    padding: 5vw;
+    max-width: 800px;
+    margin: auto;
+}
+
+#calculator {
+    display: grid;
+    align-content: center;
+    padding: 5vw;
+    max-width: 800px;
+    margin: auto;
 }

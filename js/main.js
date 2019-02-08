@@ -26,14 +26,16 @@ function tipMessage(name, total, cash, cc) {
     <h3>${name} Tip Breakdown</h3>
     <div class="tip-table">
     <div class="total-tips"><span class="tip-key">Total Tips: </span><span class="tip-amount">$${total}</span></div>
-    <div class="cash-tips"><span class="tip-key">Cash: </span><span class="tip-amount">$${cash}</span></div>
-    <div class="cc-tips"><span class="tip-key">Paycheck: </span><span class="tip-amount">$${cc}</span></div>
+    <div class="cash-tips"><span class="tip-key">Cash Tips: </span><span class="tip-amount">$${cash}</span></div>
+    <div class="cc-tips"><span class="tip-key">Paycheck Tips: </span><span class="tip-amount">$${cc}</span></div>
     </div>
   `;
 }
 
 
 function tipMath() {
+  window.scrollTo(0,document.body.scrollHeight);
+
   let barNet = Number(document.getElementById("barNet").value);
   let serverCash = Number(document.getElementById("serverCash").value);
   let busserOTR = document.getElementById("busserOTR").checked;
@@ -43,7 +45,7 @@ function tipMath() {
     ccTips = barNet
     totalTips = barNet + serverCash;
     cashTips = serverCash;
-    serverMessage = `You would get $${barNet} from the bar but now this is what you input into the spreadsheet for paychecks.`;
+    serverMessage = `You would get $${barNet} from the bar, but now this is what you input into the spreadsheet for paychecks.`;
   } else {
     ccTips = 0;
     totalTips = (barNet - serverCash) * -1;
@@ -60,7 +62,7 @@ function tipMath() {
     busserTipOutCC = 0;
   }
 
-  serverMessage += `<p>Your total tips are $${totalTips}, and your total cash tips to tip out on are $${cashTips}</p>`
+  serverMessage += `<p>Your total tips are $${totalTips}, and your total cash tips to tip out on are $${cashTips}.</p>`
 
 
   barTipOutCash = Math.ceil(cashTips * barPercent);

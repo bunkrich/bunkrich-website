@@ -26,6 +26,7 @@
   <header>
     <h1>Tip Calculator</h1>
   </header>
+  <section id="calculator">
   <div class="calc-form">
     <label for="barNet">Net Amount to/from the Bar</label>
     <input type="number" name="barNet" id="barNet"></br>
@@ -45,7 +46,8 @@
   <div class="calc-form">
     <button type="button" onclick="tipMath()">Run The Numbers!</button>
   </div>
-
+</section>
+<section id="calc-output">
   <div id="tip-out-message"></div>
 
   <div id="tip-out-box">
@@ -53,7 +55,7 @@
     <div class="tip-breakout" id="cash-out-busser"></div>
     <div class="tip-breakout" id="cash-out-server"></div>
   </div>
-
+</section>
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
