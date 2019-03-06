@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -13,18 +13,14 @@
 </script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>bunkrich</title>
-  <meta name="description" content="">
+  <title>Tip Calc</title>
+  <meta name="description" content="Tip Calc">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <!-- Place favicon.ico in the root directory -->
-
-  <!-- <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/testing.css"> -->
+  <link rel="stylesheet" href="calc/css/calc.css">
 </head>
 
 <body>
@@ -32,23 +28,68 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <!-- Add your site or application content here -->
-  <header><h1>Brent</h1></header>
-
-
+  <header>
+    <h1>Tip Calculator</h1>
+  </header>
+  <section id="calculator">
+  <div class="calc-form">
+    <label for="total-cash">Total Cash Before Cashing Out & Tipping Out</label>
+    <input type="number" name="total-cash" id="total-cash"></br>
+  </div>
   
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <h2>Info From Cash Out Receipt</h2>
+  <div class="calc-form">
+    <label for="cash-sales">Cash Sales</label>
+    <input type="number" name="cash-sales" id="cash-sales"></br>
+  </div>
+
+  <div class="calc-form">
+    <label for="cc-tips">Credit Card Tips</label>
+    <input type="number" name="cc-tips" id="cc-tips"></br>
+  </div>
+  <!-- <div class="hide calc-form">
+    <input type="number" name="totalTips" id="totalTips"></br>
+  </div> -->
+
+  <div class="calc-form">
+    <input type="checkbox" id="busser-otr" name="busser-otr">
+    <label for="busser-otr">Busser will get a check for tips.</label></br>
+    <!-- Busser will get a check for tips.<br> -->
+  </div>
+
+  <div class="calc-form">
+    <button type="button" onclick="tipMath()">Run The Numbers!</button>
+  </div>
+</section>
+<section id="calc-output">
+  <div id="tip-out-message"></div>
+
+  <div id="tip-out-box">
+    <div class="tip-breakout" id="cash-out-bar"></div>
+    <div class="tip-breakout" id="cash-out-busser"></div>
+    <div class="tip-breakout" id="cash-out-server"></div>
+  </div>
+</section>
+  <!-- <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script> -->
+  <!-- <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+  </script> -->
+  <!-- <script src="js/plugins.js"></script> -->
+  <script src="calc/js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  <!-- <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
 </body>
 
 </html>

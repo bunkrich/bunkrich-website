@@ -334,10 +334,6 @@ template {
   display: none;
 }
 
-.brent {
-  background: blue;
-}
-
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -621,6 +617,7 @@ h1 {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
   background: white;
 }
 
@@ -662,11 +659,11 @@ button {
 }
 
 label {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .tip-key {
-  font-weight: 600;
+  font-weight: 500;
   /* margin: .5em; */
 }
 
