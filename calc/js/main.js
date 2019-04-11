@@ -64,12 +64,12 @@ function tipMath() {
         cashTipsBusser = Math.ceil(cashTips * busserPercent);
         ccTipsBusser = Number((ccTips * busserPercent).toFixed(2));
       } else {
-        console.log('-------');
-        console.log(`TotalTips: $${totalTips}`);
-        console.log(`busserPercent: $${busserPercent}`)
+        // console.log('-------');
+        // console.log(`TotalTips: $${totalTips}`);
+        // console.log(`busserPercent: $${busserPercent}`)
         cashTipsBusser = Math.ceil(totalTips * busserPercent);
-        console.log(`cashTipsBusser: $${cashTipsBusser}`)
-        console.log('-------');
+        // console.log(`cashTipsBusser: $${cashTipsBusser}`)
+        // console.log('-------');
         ccTipsBusser = 0;
       }
       // let cashTipsBusser = totalTips * busserPercent;
@@ -84,21 +84,21 @@ function tipMath() {
   let cashTipsServer = Number(cashTips - cashTipsBar - cashTipsBusser);
   let ccTipsServer = Number((ccTips - ccTipsBusser - ccTipsBar).toFixed(2));
 
-  console.log(`CC Tips: $${ccTips}`);
-  console.log(`CC Tips Busser: $${ccTipsBusser}`);
-  console.log(`CC Tips Bar: $${ccTipsBar}`);
-  console.log(`Cash Tips Bar: $${cashTipsBar}`);
+  // console.log(`CC Tips: $${ccTips}`);
+  // console.log(`CC Tips Busser: $${ccTipsBusser}`);
+  // console.log(`CC Tips Bar: $${ccTipsBar}`);
+  // console.log(`Cash Tips Bar: $${cashTipsBar}`);
 
   let totalTipsBar = Number((cashTipsBar + ccTipsBar).toFixed(2));
   let totalTipsBusser = Number((cashTipsBusser + ccTipsBusser).toFixed(2));
   let totalTipsServer = Number((cashTipsServer + ccTipsServer).toFixed(2));
-console.log(`Total Tips BAR: $${totalTipsBar}`)
-console.log(`Total Tips Busser: $${totalTipsBusser}`)
+// console.log(`Total Tips BAR: $${totalTipsBar}`)
+// console.log(`Total Tips Busser: $${totalTipsBusser}`)
 
-console.log(`Server Cash Tips: $${cashTipsServer}`)
-console.log(`Server CC Tips: $${ccTipsServer}`)
+// console.log(`Server Cash Tips: $${cashTipsServer}`)
+// console.log(`Server CC Tips: $${ccTipsServer}`)
 
-console.log(`Total Tips Sever: $${totalTipsServer}`)
+// console.log(`Total Tips Sever: $${totalTipsServer}`)
 let serverTakeHomeCash = Math.round(cashTips - cashTipsBar - cashTipsBusser);
 
   let tipTextBusser = tipMessage("Busser", totalTipsBusser, cashTipsBusser, ccTipsBusser);
